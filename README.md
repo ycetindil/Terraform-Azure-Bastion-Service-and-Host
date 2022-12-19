@@ -65,7 +65,6 @@ Create `resource-groups.tf` file.
 - VNet `vnets.tf`
 - Web subnet and NSG `web-subnet-and-nsg.tf`
 - Bastion subnet and NSG `bastion-subnet-and-nsg.tf`
-- VNet outputs `vnet-outputs.tf`
 
 # Step 07: Web Linux VM
 - NIC `web-linuxvm-network-interface.tf`
