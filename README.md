@@ -7,6 +7,7 @@ description: Create Azure Bastion Host and Service using Terraform
 We are going to create two important Bastion Resources
 1. Azure Bastion Host
 2. Azure Bastion Service
+
 We are going to use following Azure Resources for the same.
 1. Terraform Input Variables
 2. azurerm_public_ip
@@ -142,7 +143,7 @@ ls
 
 # Connect to Web Linux VM using Bastion Host VM
 1. Connect to Web Linux VM
-ssh -i ssh-keys/terraform-azure.pem azureuser@<Web-LinuxVM-PrivateIP>
+ssh -i /tmp/terraform-azure.pem azureuser@<Web-LinuxVM-PrivateIP>
 sudo su -
 cd /var/log
 tail -100f cloud-init-output.log
@@ -152,17 +153,19 @@ cd /var/www/html/app1
 ls -lrt
 exit
 exit
+exit
+exit
 ```
 
 # Step 16: Verify Resources - Bastion Service
-```t
-# Verify Azure Bastion Service
+## Verify Azure Bastion Service
 1. Go to Azure Management Portal Console -> Bastions
 2. Verify Bastion Service -> hr-dev-bastion-service
 3. Verify Settings -> Sessions
 4. Verify Settings -> Configuration
 
-# Connect to Web Linux VM using Bastion Service
+## Connect to Web Linux VM using Bastion Service
+```t
 1. Go to Web Linux VM using Azure Portal Console
 2. Portal Console -> Virtual machines -> hr-dev-web-linuxvm -> Settings -> Connect
 3. Select "Bastion" tab -> Click on "Use Bastion"
@@ -178,12 +181,11 @@ cd /var/www/html
 ls
 cd /var/www/html/app1
 ls
-
-# Verify Bastion Sessions
-1. Go to Azure Management Porta Console -> Bastions
+```
+## Verify Bastion Sessions
+1. Go to Azure Management Portal Console -> Bastions
 2. Verify Bastion Service -> hr-dev-bastion-service
 3. Verify Settings -> Sessions
-```
 
 # Step 17: Delete Resources
 ```t
